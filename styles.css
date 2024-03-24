@@ -1,0 +1,335 @@
+/*RkxBR3t0aHJlZWh1bmRyZWRfYW5kIF9lbGV2ZW5fMzExfQ==*/
+
+body {
+    background-color: #317d5c;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center; /* Center vertically */
+    margin: 3% 2%;
+}
+
+
+.input-container {
+    width: 45%;
+    padding: 20px;
+    border-radius: 30px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-color: #B9D0E9;
+}
+
+.image-container {
+    width: 25%;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.table-container {
+    width: 45%;
+    padding: 20px;
+    background-color: #000000;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-top: 3%;
+    margin-left: 2%;
+    margin-right: 5%;
+    margin-bottom: 2%;
+}
+
+.input-container {
+    animation: slideInLeft 1s forwards;
+}
+
+.table-container table td {
+    font-size: 105%; /* Adjust the font size as needed */
+}
+
+.table-container {
+    animation: slideInRight 1s forwards;
+}
+
+/* Style for the select element */
+#cutstrSelect {
+    padding: 8px; /* Add padding for better spacing */
+    font-size: 125%; /* Increase font size for better readability */
+    border: 5px solid #43677b; /* Add a border */
+    border-radius: 30px; /* Add border radius for rounded corners */
+    font-weight: bold;
+    background-color: #0E2239;
+    color: #B9D0E9
+  }
+  
+  /* Style for the scale elements */
+  #cutstrSelect option {
+    padding: 8px; /* Add padding for better spacing */
+    background-color: #0E2239;
+    color: #B9D0E9
+  }
+
+  /* Style for the select element */
+#scaleselection {
+    padding: 8px; /* Add padding for better spacing */
+    font-size: 125%; /* Increase font size for better readability */
+    border: 5px solid #43677b; /* Add a border ooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo */
+    border-radius: 30px; /* Add border radius for rounded corners */
+    font-weight: bold;
+    background-color: #0E2239;
+    color: #B9D0E9
+  }
+  
+  /* Style for the option elements */
+  #scaleselection option {
+    padding: 8px; /* Add padding for better spacing */
+    background-color: #0E2239;
+    color: #B9D0E9
+  }
+  
+  /* Style for the label */
+  label {
+    display: block; /* Ensure label takes up full width */
+    margin-bottom: 8px; /* Add margin bottom for spacing */
+    font-weight: bold; /* Make label text bold */
+  }
+  
+
+@keyframes slideInLeft {
+    from {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideInRight {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+/* Custom styling for horizontal rule */
+hr {
+    border: none; /* Remove default border */
+    height: 4px; /* Set the height of the line */
+    background-color: #333; /* Set the color of the line */
+    margin-bottom: 7px; /* Add margin for spacing */
+}
+
+.input-container h2 {
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.input-fields label {
+    display: block;
+    margin-bottom: 5px;
+    margin-left: 5px;
+    color: #0E2239; /*ooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo*/
+    font-weight: bold;
+    font-size: 200%
+}
+
+.input-fields input {
+    width: calc(100% - 10px);
+    padding: 8px;
+    margin-bottom: 10px;
+    border-radius: 30px;
+    border: 5px solid #43677b; /*ooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo*/
+    background-color: #0E2239;
+    color: #B9D0E9;
+    font-weight: bold;
+    font-size: 125%
+}
+
+::placeholder {
+    color: #00ffff6c; /* Placeholder text color */
+    font-weight: bold;
+    font-style: oblique;
+}
+
+button {
+    background-color: #163ead;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 30px;
+    font-weight: bold;
+    font-style: oblique;
+    cursor: pointer;
+    font-size: 145%;
+    transition: background-color 0.3s ease;
+}
+
+.reset-button {
+    background-color: #00ff22;
+    color: rgb(0, 0, 0);
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    font-style: oblique;
+    cursor: pointer;
+    font-size: 145%;
+    transition: background-color 0.3s ease;
+}
+
+.reset-button:hover {
+    background-color: #003cff98;
+}
+
+button:hover {
+    background-color: #0e2a8a;
+}
+
+.table-container table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+td {
+    text-align: center;
+    width: 20%;
+    height: 20px;
+    border: 3px solid black;
+    background-color: black;
+    color: white;
+    font-size: 14px;
+}
+
+td.white {
+    background-color: white;
+    color: black;
+}
+
+td.gray {
+    background-color: gray;
+    color: white;
+}
+
+* {box-sizing: border-box;}
+body {font-family: Verdana, sans-serif;}
+.mySlides {display: none;}
+img {vertical-align: middle;}
+
+.dropbtn {
+    background-color: #04AA6D;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+  }
+  
+  .dropdown {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+  }
+  
+  .dropdown-content a {
+    color: #B9D0E9;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+  }
+  
+  .dropdown-content a:hover {background-color: #ddd;}
+  
+  .dropdown:hover .dropdown-content {display: block;}
+  
+  .dropdown:hover .dropbtn {background-color: #3e8e41;}
+
+  /* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    font-size: 165%;
+    border-radius: 30px;
+  }
+  
+  /* Modal Content */
+  .modal-content {
+    position: relative;
+    background-color: #fefefe;
+    margin-top: 10%;
+    margin-bottom: 10%;
+    padding: 0;
+    border: 30px solid #888;
+    border-radius: 30px;
+    width: 100%;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+    -webkit-animation-name: animatetop;
+    -webkit-animation-duration: 0.4s;
+    animation-name: animatetop;
+    animation-duration: 0.4s
+  }
+  
+  /* Add Animation */
+  @-webkit-keyframes animatetop {
+    from {top:-300px; opacity:0} 
+    to {top:0; opacity:1}
+  }
+  
+  @keyframes animatetop {
+    from {top:-300px; opacity:0}
+    to {top:0; opacity:1}
+  }
+  
+  /* The Close Button */
+  .close {
+    color: white;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  
+  .modal-header {
+    padding: 2px 16px;
+    background-color: #5cb85c;
+    color: white;
+  }
+  
+  .modal-body {padding: 2px 16px;}
+  
+  .modal-footer {
+    padding: 2px 16px;
+    background-color: #5cb85c;
+    color: white;
+  }

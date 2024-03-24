@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Electrophoresis</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <link rel="icon" type="image/png" href="icon.png">
+</head>
+
+<body>
+    <!--RkxBR3t0aHJlZWh1bmRyZWRfYW5kIF9lbGV2ZW5fMzExfQ==-->
+    <div class="container">
+        <div class="input-container">
+            <div class="input-fields">
+                <label for="scaleselection">Κλίμακα</label>
+                <select id="scaleselection" onchange="updateScale()">
+                    <option value="" selected="" disabled="" hidden="">Επιλέξτε μάρτυρα μοριακού βάρους:</option>
+                    <option value="4-8-14-20">4 - 8 - 14 - 20</option>
+                    <option value="10-20-35-50">10 - 20 - 35 - 50</option>
+                    <option value="20-40-70-100">20 - 40 - 70 - 100</option>
+                    <option value="200-400-700-1000">200 - 400 - 700 - 1000</option>
+                    <option value="400-800-1400-2000">400 - 800 - 1400 - 2000</option>
+                    <option value="600-1200-2100-3000">600 - 1200 - 2100 - 3000</option>
+                </select>
+            </div>
+            <br>
+            <div class="input-fields">
+                <hr>
+                <label for="input1">1η αλληλουχία DNA:</label>
+                <input type="text" id="input11" placeholder="Εισάγετε τον πρώτο κλώνο της αλληλουχίας DNA με προσανατολισμό 5'-3'...">
+                <input type="text" id="input12" placeholder="Εισάγετε τον δεύτερο κλώνο της αλληλουχίας DNA με προσανατολισμό 3'-5'...">
+                <hr>
+                <label for="input2">2η αλληλουχία DNA:</label>
+                <input type="text" id="input21" placeholder="Εισάγετε τον πρώτο κλώνο της αλληλουχίας DNA με προσανατολισμό 5'-3'...">
+                <input type="text" id="input22" placeholder="Εισάγετε τον δεύτερο κλώνο της αλληλουχίας DNA με προσανατολισμό 3'-5'...">
+                <hr>
+                <label for="input3">3η αλληλουχία DNA:</label>
+                <input type="text" id="input31" placeholder="Εισάγετε τον πρώτο κλώνο της αλληλουχίας DNA με προσανατολισμό 5'-3'...">
+                <input type="text" id="input32" placeholder="Εισάγετε τον δεύτερο κλώνο της αλληλουχίας DNA με προσανατολισμό 3'-5'...">
+                <hr>
+                <label for="input4">Εκκινητές:</label>
+                <input type="text" id="input41" placeholder="Εισάγετε την αλληλουχία του forward primer με προσανατολισμό 5'-3'...">
+                <input type="text" id="input42" placeholder="Εισάγετε την αλληλουχία του reverse primer με προσανατολισμό 5'-3'...">
+                <hr>
+                <label for="scaleselection">Ενδονουκλεάση</label>
+                <select id="cutstrSelect" onchange="cutstrselection()">
+                    <option value="" selected="" disabled="" hidden="">Επιλέξτε περιοριστική ενδονουκλεάση:</option>
+                    <option value="BamH I">BamH I</option>
+                    <option value="EcoR I">EcoR I</option>
+                    <option value="Hae III">Hae III</option>
+                    <option value="Hha I">Hha I</option>
+                    <option value="Hind III">Hind III</option>
+                </select>
+            </div>
+            <br><hr><br>
+            <button onclick="updateTable()">Ανανέωση Πίνακα</button>
+            <button onclick="importel()">Εισαγωγή Αρχείου</button>
+            <button onclick="exportel()">Εξαγωγή Αρχείου</button>
+            <br><br>
+            <button onclick="length()">Μήκος DNA</button>
+            <button onclick="complete()">Συμπληρωματική Αλληλουχία</button>
+            <button onclick="defaultfile()">Πρότυπο Αρχείο Εισόδου</button>
+            <br><br>
+            <input type="file" id="fileInput" accept=".gs311" style="display: none;" onchange="importel(event)">
+            <button onclick="credtiss()">Credits</button>
+            <!--
+            <div id="myModal" class="modal">
+                !--Modal content--
+                
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <span class="close">&times;</span>
+                        <h2>Credits</h2>
+                    </div>
+                    <div class="modal-body">
+                        <p>1ο Πρότυπο ΓΕΛ Χαλκίδας</p><br>
+                        <p>• Γιώτας Ορφέας-Δημήτριος</p>
+                        <p>• Σκιάς Αντώνιος-Μιχαήλ</p><br>
+                        <p>Σχολικό έτος: 2023-2024</p>
+                    </div>
+                    <div class="modal-footer">
+                        <h3>Προσομοίωση ηλεκτροφόρησης PCR</h3>
+                    </div>
+                </div>
+            
+                <br>
+            </div>-->
+        </div>
+        <div class="table-container">
+            <table id="myTable">
+                <tr><td class="black"></td><td class="black"></td><td class="black"></td><td class="black"></td></tr>
+                <tr><td class="black"></td><td class="black"></td><td class="black"></td><td class="black"></td></tr>
+                <tr><td class="black"></td><td class="black"></td><td class="black"></td><td class="black"></td></tr>
+                <tr><td class="black"></td><td class="black"></td><td class="black"></td><td class="black"></td></tr>
+                <tr><td class="black"></td><td class="black"></td><td class="black"></td><td class="black"></td></tr>
+                <tr><td class="black"></td><td class="black"></td><td class="black"></td><td class="black"></td></tr>
+                <tr><td class="black"></td><td class="black"></td><td class="black"></td><td class="black"></td></tr>
+                <tr><td class="black"></td><td class="black"></td><td class="black"></td><td class="black"></td></tr>
+                <tr><td class="black"></td><td class="black"></td><td class="black"></td><td class="black"></td></tr>
+                <tr><td class="black"></td><td class="black"></td><td class="black"></td><td class="black"></td></tr>
+                <tr><td class="black"></td><td class="black"></td><td class="black"></td><td class="black"></td></tr>
+                <tr><td class="black"></td><td class="black"></td><td class="black"></td><td class="black"></td></tr>
+                <tr><td class="black"></td><td class="black"></td><td class="black"></td><td class="black"></td></tr>
+                <tr><td class="black"></td><td class="black"></td><td class="black"></td><td class="black"></td></tr>
+                <tr><td class="black"></td><td class="black"></td><td class="black"></td><td class="black"></td></tr>
+                <tr><td class="black"></td><td class="black"></td><td class="black"></td><td class="black"></td></tr>
+                <tr><td class="black"></td><td class="black"></td><td class="black"></td><td class="black"></td></tr>
+                <tr><td class="black"></td><td class="black"></td><td class="black"></td><td class="black"></td></tr>
+                <tr><td class="black"></td><td class="black"></td><td class="black"></td><td class="black"></td></tr>
+                <tr><td class="black"></td><td class="black"></td><td class="black"></td><td class="black"></td></tr>
+                <tr><td class="black"></td><td class="black"></td><td class="black"></td><td class="black"></td></tr>
+                <tr><td class="black"></td><td class="black"></td><td class="black"></td><td class="black"></td></tr>
+                <tr><td class="black"></td><td class="black"></td><td class="black"></td><td class="black"></td></tr>
+                <tr><td class="black"></td><td class="black"></td><td class="black"></td><td class="black"></td></tr>
+                <tr><td class="black"></td><td class="black"></td><td class="black"></td><td class="black"></td></tr>
+                <tr><td class="black"></td><td class="black"></td><td class="black"></td><td class="black"></td></tr>
+                <tr><td class="black"></td><td class="black"></td><td class="black"></td><td class="black"></td></tr>
+                <tr><td class="black"></td><td class="black"></td><td class="black"></td><td class="black"></td></tr>
+                <tr><td class="black"></td><td class="black"></td><td class="black"></td><td class="black"></td></tr>
+                <tr><td class="black"></td><td class="black"></td><td class="black"></td><td class="black"></td></tr>
+                <tr><td class="black"></td><td class="black"></td><td class="black"></td><td class="black"></td></tr>
+                <tr><td class="black"></td><td class="black"></td><td class="black"></td><td class="black"></td></tr>
+                <tr><td class="black"></td><td class="black"></td><td class="black"></td><td class="black"></td></tr>
+                <tr><td class="black"></td><td class="black"></td><td class="black"></td><td class="black"></td></tr>
+                <tr><td class="black"></td><td class="black"></td><td class="black"></td><td class="black"></td></tr>
+                <tr><td class="black"></td><td class="black"></td><td class="black"></td><td class="black"></td></tr>
+                <tr><td class="black"></td><td class="black"></td><td class="black"></td><td class="black"></td></tr>
+                <tr><td class="black"></td><td class="black"></td><td class="black"></td><td class="black"></td></tr>
+                <tr><td class="black"></td><td class="black"></td><td class="black"></td><td class="black"></td></tr>
+                <tr><td class="black"></td><td class="black"></td><td class="black"></td><td class="black"></td></tr>
+                <tr><td class="black"></td><td class="black"></td><td class="black"></td><td class="black"></td></tr>
+                <tr><td class="black"></td><td class="black"></td><td class="black"></td><td class="black"></td></tr>
+                <tr><td class="black"></td><td class="black"></td><td class="black"></td><td class="black"></td></tr>
+                <tr><td class="black"></td><td class="black"></td><td class="black"></td><td class="black"></td></tr>
+                <tr><td class="black"></td><td class="black"></td><td class="black"></td><td class="black"></td></tr>
+                <tr><td class="black"></td><td class="black"></td><td class="black"></td><td class="black"></td></tr>
+                <tr><td class="black"></td><td class="black"></td><td class="black"></td><td class="black"></td></tr>
+                <tr><td class="black"></td><td class="black"></td><td class="black"></td><td class="black"></td></tr>
+                <tr><td class="black"></td><td class="black"></td><td class="black"></td><td class="black"></td></tr>
+                <tr><td class="black"></td><td class="black"></td><td class="black"></td><td class="black"></td></tr>
+
+            </table>
+    </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
