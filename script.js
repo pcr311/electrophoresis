@@ -315,12 +315,12 @@ function actuallyupdate() {
             }
         }
         for (var i = 0; i < scaleCells.length; i++) {
-            for (var j = 0; j <= indices1.length; j++) {
+            for (var j = 0; j <= indices3.length; j++) {
                 var k = 4;
-                if (i + 1 == Math.floor(indices1[j] * coefficient)) {
+                if (i + 1 == Math.floor(indices3[j] * coefficient)) {
                     scaleCells[199 - i * k - 8].classList.remove("black");
                     scaleCells[199 - i * k - 8].classList.add("white");
-                    scaleCells[199 - i * k - 8].textContent = indices1[j] + " bp";
+                    scaleCells[199 - i * k - 8].textContent = indices3[j] + " bp";
                 } else if (i + 1 == Math.floor((input41.length + input42.length) / 2 * coefficient + 1)) {
                     scaleCells[199 - i * k - 8].classList.remove("black");
                     scaleCells[199 - i * k - 8].classList.add("gray");
@@ -557,12 +557,12 @@ function importel() {
                     }
                 }
                 for (var i = 0; i < scaleCells.length; i++) {
-                    for (var j = 0; j <= indices1.length; j++) {
+                    for (var j = 0; j <= indices3.length; j++) {
                         var k = 4;
-                        if (i + 1 == Math.floor(indices1[j] * coefficient)) {
+                        if (i + 1 == Math.floor(indices3[j] * coefficient)) {
                             scaleCells[199 - i * k - 8].classList.remove("black");
                             scaleCells[199 - i * k - 8].classList.add("white");
-                            scaleCells[199 - i * k - 8].textContent = indices1[j] + " bp";
+                            scaleCells[199 - i * k - 8].textContent = indices3[j] + " bp";
                         } else if (i + 1 == Math.floor((input41.length + input42.length) / 2 * coefficient + 1)) {
                             scaleCells[199 - i * k - 8].classList.remove("black");
                             scaleCells[199 - i * k - 8].classList.add("gray");
